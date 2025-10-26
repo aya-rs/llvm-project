@@ -437,7 +437,7 @@ SDValue BPFTargetLowering::LowerFormalArguments(
   }
   if (IsVarArg)
     fail(DL, DAG, "variadic functions are not supported");
-  if (MF.getFunction().hasStructRetAttr())
+  if (MF.getFunction().hasStructRetAttr() && !AllowStackArgs)
     fail(DL, DAG, "aggregate returns are not supported");
 
   return Chain;
