@@ -1214,6 +1214,7 @@ bool llvm::CallingConv::supportsNonVoidReturnType(CallingConv::ID CC) {
   case CallingConv::AVR_INTR:
   case CallingConv::AVR_SIGNAL:
   case CallingConv::AVR_BUILTIN:
+  case CallingConv::BPF_Stack:
     return true;
   case CallingConv::AMDGPU_KERNEL:
   case CallingConv::SPIR_KERNEL:

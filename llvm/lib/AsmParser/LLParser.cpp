@@ -2309,6 +2309,9 @@ bool LLParser::parseOptionalCallingConv(unsigned &CC) {
 #undef CC_VLS_CASE
     }
     return false;
+  case lltok::kw_bpf_stackcc:
+    CC = CallingConv::BPF_Stack;
+    break;
   case lltok::kw_cc: {
       Lex.Lex();
       return parseUInt32(CC);
